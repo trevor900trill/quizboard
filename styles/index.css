@@ -1,0 +1,35 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+.innerpage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 669px;
+  width: 100%;
+  background-color: white;
+}
+.firstside{
+  position: absolute;
+  left:0px;
+  background-color: white;
+  height : 669px;
+  width:300px;
+  box-shadow: 0px 0px .2px black;
+}
+.secondside{
+  background-color: red;
+  height: 669px;
+  width: 660px;
+}
+.thirdside{
+  position: absolute;
+  right:0px;
+  background-color: white;
+  height : 669px;
+  width:300px;
+  box-shadow: 0px 0px .2px black;
+
+}
