@@ -40,17 +40,38 @@ $('#question10').change(function(){
 });
 var answers = ["PASCAL" , "HTML" , "ECMAscript" , "Node js" , "YES" , "CPU" , "PROLOG" , "css" , "java" , "ones and zeros"];
 var byUser = [];
+var res = []
 //logic for is it correct
+var count=0;
 var find = (() => {
   byUser.push(ans1 ,ans2,ans3,ans4,ans5,ans6,ans7,ans8,ans9,ans10);
-
-
   console.log(byUser);
+  for(var i = 0; i < answers.length ; i++){
+    for(var j = 0 ; j < byUser.length ; j++){
+      if(answers[i] === byUser[j])
+      {
+        count = count+1
+        console.log(" correct "+ byUser[j] +" score " + count + " out of 10" );
+        calculate(count);
+      }
+      else
+      {
+        //do nothing;
+      }
+    }
+  }
+});
+//calculate handle
+var calculate = ((number) => {
+  var divide = number / 10;
+  var final =  divide * 100;
+  res.push(final);
 });
 //logic user interface
 $(document).ready(function(){
   //click handle
   $(".submitBtn").on("click",function(){
-      find()
+      find();
+      alert(res[res.length -1 ] + "%");
   });
 });
