@@ -40,6 +40,7 @@ body{
   align-items: flex-start;
   justify-content: center;
   padding: 10px;
+  overflow:hidden;
 }
 .secondcolumn{
   background-color: white;
@@ -48,7 +49,8 @@ body{
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  overflow: auto;
+  overflow-x : hidden;
+  overflow-y: auto;
 
 }
 .secondinside{
@@ -65,7 +67,7 @@ body{
   display: block;
 }
 .choicesbox{
-  width: 100%;
+  width: 600px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -92,4 +94,16 @@ body{
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+::-webkit-scrollbar{
+  width : 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #aeaeaf;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #d6d6db;
+}
+::-webkit-scrollbar-track{
+  background-color: white;
 }
