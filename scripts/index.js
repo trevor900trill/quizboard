@@ -38,8 +38,11 @@ $('#question9').change(function(){
 $('#question10').change(function(){
    ans10 = $(this).val();
 });
+//the correct answers
 var answers = ["PASCAL" , "HTML" , "ECMAscript" , "Node js" , "YES" , "CPU" , "PROLOG" , "css" , "java" , "ones and zeros"];
+//the answers given by the user
 var byUser = [];
+//marking get the last item;
 var res = []
 //logic for is it correct
 var count=0;
@@ -67,11 +70,24 @@ var calculate = ((number) => {
   var final =  divide * 100;
   res.push(final);
 });
+//clear the values
+var clear =(() => {
+   //reload the page
+   location.reload();
+});
 //logic user interface
 $(document).ready(function(){
   //click handle
   $(".submitBtn").on("click",function(){
       find();
-      alert(res[res.length -1 ] + "%");
+      if(res[res.length-1] === undefined)
+      {
+        alert("0%");
+      }
+      else
+      {
+        alert(res[res.length -1 ] + "%");
+      }
+      clear();
   });
 });
