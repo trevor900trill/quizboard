@@ -2,6 +2,7 @@ body{
   padding: 0px;
   margin: 0px;
   border: 0px;
+  overflow: hidden;
 }
 .innerpage{
   display: flex;
@@ -18,11 +19,59 @@ body{
   height : 669px;
   width:300px;
   box-shadow: 0px 0px .2px black;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+.firstcolumn{
+  background-color: white;
+  height:650px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .secondside{
-  background-color: red;
+  background-color: white;
   height: 669px;
   width: 660px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+.secondcolumn{
+  background-color: white;
+  height:650px;
+  width: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+
+}
+.secondinside{
+  display:block;
+  height:650px;
+  width: 600px;
+}
+.well{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.innerwell{
+  display: block;
+}
+.choicesbox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.choices{
+  display: block;
 }
 .thirdside{
   position: absolute;
@@ -31,5 +80,16 @@ body{
   height : 669px;
   width:300px;
   box-shadow: 0px 0px .2px black;
-
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+}
+.thirdcolumn{
+  background-color: white;
+  height:650px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
