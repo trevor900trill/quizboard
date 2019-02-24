@@ -116,8 +116,8 @@ $(document).ready(function(){
           document.getElementsByClassName("picture")[0].setAttribute("src" , "https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099__340.png");
           document.getElementById("resultperc").textContent="PASS"
           document.getElementById("numberres").textContent= numbercheck + "%";
-        } 
-      }
+        }
+      } 
       clear();
   });
 });
