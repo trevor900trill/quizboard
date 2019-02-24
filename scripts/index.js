@@ -118,6 +118,6 @@ $(document).ready(function(){
           document.getElementById("numberres").textContent= numbercheck + "%";
         }
       }
-      clear(); 
+      clear();  
   });
 });
