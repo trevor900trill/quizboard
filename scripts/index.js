@@ -55,6 +55,9 @@ var find = (() => {
       {
         count = count+1
         console.log(" correct "+ byUser[j] +" score " + count + " out of 10" );
+        document.getElementsByClassName("statusupdate")[0].textContent = "you got the following answers correct";
+        var correctionList = document.getElementsByClassName("correctList")[0];
+        correctionList.innerHTML += "<li>"+byUser[j]+"</li>";
         calculate(count);
       }
       else
@@ -73,7 +76,9 @@ var calculate = ((number) => {
 //clear the values
 var clear =(() => {
    //reload the page
-   location.reload();
+   setTimeout(function(){
+     location.reload();
+   },11000);
 });
 //logic user interface
 $(document).ready(function(){
@@ -82,11 +87,36 @@ $(document).ready(function(){
       find();
       if(res[res.length-1] === undefined)
       {
-        alert("0%");
+        alert("0% is a fail");
+        document.getElementsByClassName("picture")[0].setAttribute("src" , "https://pngimage.net/wp-content/uploads/2018/06/wrong-symbol-png-8.png");
+        document.getElementById("resultperc").textContent="FAIL"
+        document.getElementById("numberres").textContent="0%";
       }
       else
       {
-        alert(res[res.length -1 ] + "%");
+        //get the mark
+        var numbercheck = parseInt(res[res.length - 1]);
+        if( numbercheck < 50 )
+        {
+          alert(numbercheck + "% " + "is a fail");
+          document.getElementsByClassName("picture")[0].setAttribute("src" , "https://pngimage.net/wp-content/uploads/2018/06/wrong-symbol-png-8.png");
+          document.getElementById("resultperc").textContent="FAIL"
+          document.getElementById("numberres").textContent= numbercheck + "%";
+        }
+        else if( numbercheck > 50 && numbercheck < 80 )
+        {
+          alert(numbercheck + "% "+"is a fair mark");
+          document.getElementsByClassName("picture")[0].setAttribute("src" , "https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099__340.png");
+          document.getElementById("resultperc").textContent="FAIR"
+          document.getElementById("numberres").textContent= numbercheck + "%";
+        }
+        else if(numbercheck > 80 )
+        {
+          alert(numbercheck + "% "+"is a pass");
+          document.getElementsByClassName("picture")[0].setAttribute("src" , "https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099__340.png");
+          document.getElementById("resultperc").textContent="PASS"
+          document.getElementById("numberres").textContent= numbercheck + "%";
+        }
       }
       clear();
   });
