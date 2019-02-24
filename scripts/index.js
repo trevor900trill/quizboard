@@ -117,7 +117,7 @@ $(document).ready(function(){
           document.getElementById("resultperc").textContent="PASS"
           document.getElementById("numberres").textContent= numbercheck + "%";
         }
-      } 
+      }
       clear();
-  });
+  }); 
 });
