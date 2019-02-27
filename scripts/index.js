@@ -78,7 +78,7 @@ var clear =(() => {
    //reload the page
    setTimeout(function(){
      location.reload();
-   },11000);
+   },7000);
 });
 //logic user interface
 $(document).ready(function(){
