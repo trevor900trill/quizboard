@@ -85,6 +85,7 @@ $(document).ready(function(){
   //click handle
   $(".submitBtn").on("click",function(){
       find();
+     $(this).hide();
       if(res[res.length-1] === undefined)
       {
         alert("0% is a fail");
@@ -103,14 +104,14 @@ $(document).ready(function(){
           document.getElementById("resultperc").textContent="FAIL"
           document.getElementById("numberres").textContent= numbercheck + "%";
         }
-        else if( numbercheck > 50 && numbercheck < 80 )
+        else if( numbercheck > 50 || numbercheck === 50 && numbercheck < 80 )
         {
           alert(numbercheck + "% "+"is a fair mark");
           document.getElementsByClassName("picture")[0].setAttribute("src" , "https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099__340.png");
           document.getElementById("resultperc").textContent="FAIR"
           document.getElementById("numberres").textContent= numbercheck + "%";
         }
-        else if(numbercheck > 80 )
+        else if(numbercheck > 80 || numbercheck === 80)
         {
           alert(numbercheck + "% "+"is a pass");
           document.getElementsByClassName("picture")[0].setAttribute("src" , "https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099__340.png");
